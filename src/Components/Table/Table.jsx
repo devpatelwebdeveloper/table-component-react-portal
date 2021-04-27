@@ -2,7 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import "./Table.scss";
 
-function Table({ comparison }) {
+function Table() {
   const iconCheck = (
     <img
       src="https://quickbooks.intuit.com/oidam/intuit/sbseg/en_ca/shared/icons/checkmark-thick.svg"
@@ -17,16 +17,17 @@ function Table({ comparison }) {
       alt="no"
     />
   );
+  console.log(`window`, window);
   return ReactDom.createPortal(
-    <>
+    <div className="tableComp">
       <table className="table">
-        <thead>
-          <td>{comparison.title}</td>
-          <td className="prodOne">{comparison.productOne}</td>
-          <td className="prodTwo">{comparison.productTwo}</td>
+        <thead className="th">
+          <td className="compTitle">{window.comparison.title}</td>
+          <td className="prodOne">{window.comparison.productOne}</td>
+          <td className="prodTwo">{window.comparison.productTwo}</td>
         </thead>
-        <tbody>
-          {comparison.differences.map((compare, index) => {
+        <tbody className="tbody">
+          {window.comparison.differences.map((compare, index) => {
             return (
               <>
                 <tr className="tr">
@@ -56,8 +57,8 @@ function Table({ comparison }) {
           })}
         </tbody>
       </table>
-    </>,
-    document.getElementById(comparison.portId)
+    </div>,
+    document.getElementById(window.comparison.portId)
   );
 }
 
