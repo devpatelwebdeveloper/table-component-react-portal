@@ -1,0 +1,54 @@
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.td, .th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+.td{
+  &:not(:first-child){
+    text-align: center;
+    
+  }
+  width:20%;
+  &:first-child{
+    width:60%;
+  }
+}
+.tr {
+  &:nth-child(even){
+    background-color: #dddddd;
+  }
+}
+.icon{
+  margin:0 auto;
+  width: 14px;
+  height:14px;
+  display:block;
+  padding-bottom:10px;
+}
+
+.prodOne{
+  font-size: 22px;
+    margin: 15px;
+    text-align: center;
+    background: #2CA01C;
+    // display: block;
+    color: #ffffff;
+    padding: 40px 0;
+    max-height: 100px;
+}
+.prodTwo{
+  font-size: 22px;
+  margin: 0 0 15px;
+  text-align: center;
+  background: #8D9096;
+  // display: block;
+  color: #ffffff;
+  padding: 40px 0;
+  max-height: 100px;
+}
